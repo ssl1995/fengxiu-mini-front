@@ -1,13 +1,15 @@
 import {Theme} from "../../model/theme";
 import {Banner} from "../../model/banner";
 import {Categroy} from "../../model/categroy";
+import {Activity} from "../../model/activity";
 
 Page({
 
     data: {
         themeA: null,
         bannerB: null,
-        grid: []
+        grid: [],
+        activityD:null,
     },
 
     /**
@@ -22,11 +24,14 @@ Page({
     async initAllData() {
         const themeA = await Theme.getHomeLocationA();
         const bannerB = await Banner.getHomeLocationB();
-        const grid = await Categroy.getGridCategory();
+        const grid = await Categroy.getHomeLocationC();
+        const activityD = await Activity.getHomeLocationD();
+        console.log(activityD)
         this.setData({
             themeA: themeA[0],
             bannerB,
-            grid
+            grid,
+            activityD
         })
     },
 
