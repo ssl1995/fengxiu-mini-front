@@ -1,0 +1,9 @@
+.top-theme {
+    width: 100%;
+    height: 260rpx; /* 小程序基础：1rpx=0.5px */
+}
+
+.swiper {
+    width: 100%;
+    height: 360rpx;
+}

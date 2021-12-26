@@ -1,0 +1,14 @@
+{
+  "name": "fengxiu",
+  "version": "0.1.0",
+  "description": "风袖电商小程序",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "songshenglin",
+  "license": "ISC",
+  "dependencies": {
+    "lin-ui": "^0.9.5"
+  }
+}
