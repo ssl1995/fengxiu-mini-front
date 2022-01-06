@@ -5,6 +5,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-color: #ffffff; /*六宫格设置背景色为白色*/
 }
 
 .inner-container {

@@ -1,15 +1,22 @@
 .top-theme {
     width: 100%;
     height: 260rpx; /* 小程序基础：1rpx=0.5px */
+    display: flex; /*消除图片下面自带的间距*/
 }
 
 .swiper {
     width: 100%;
     height: 360rpx;
+    display: flex;
 }
 
 .activity {
     margin-top: 20rpx;
     width: 100%;
     height: 310rpx;
+    display: flex;
 }
+
+/*.container{*/
+/*    background-color: #000000;*/
+/*}*/

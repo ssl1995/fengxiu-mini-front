@@ -1,6 +1,7 @@
 <view>
-
+    <!--轮播图-->
     <image class="top-theme" src="{{themeA.entrance_img}}"></image>
+    <!--六宫格-->
     <!--调用微信小程序swiper组件-->
     <swiper class="swiper"
             indicator-dots
@@ -17,5 +18,6 @@
 
     <s-category-grid grid="{{grid}}"></s-category-grid>
 
+    <!--优惠券-->
     <image class="activity" src="{{activityD.entrance_img}}"></image>
 </view>
