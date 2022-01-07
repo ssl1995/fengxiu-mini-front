@@ -7,9 +7,10 @@ Page({
 
     data: {
         themeA: null,
+        themeE: null,
         bannerB: null,
         grid: [],
-        activityD:null,
+        activityD: null,
     },
 
     /**
@@ -22,13 +23,22 @@ Page({
     },
 
     async initAllData() {
-        const themeA = await Theme.getHomeLocationA();
+        // 获取全部主题数据,
+        // 为了全部Page只请求一次Themes
+        // 保存数据：page的data里、缓存、保存在app全局,最好的办法是使用类的对象保存状态和数据
+        const theme = new Theme();
+        await theme.getThemes();
+        const themeA = await theme.getHomeLocationA();
+        const themeE = await theme.getHomeLocationE();
+
+
         const bannerB = await Banner.getHomeLocationB();
         const grid = await Categroy.getHomeLocationC();
         const activityD = await Activity.getHomeLocationD();
         console.log(activityD)
         this.setData({
-            themeA: themeA[0],
+            themeA: themeA,
+            themeE: themeE,
             bannerB,
             grid,
             activityD
