@@ -28,14 +28,18 @@ Page({
         // 保存数据：page的data里、缓存、保存在app全局,最好的办法是使用类的对象保存状态和数据
         const theme = new Theme();
         await theme.getThemes();
+
         const themeA = await theme.getHomeLocationA();
+        console.log(themeA)
+
         const themeE = await theme.getHomeLocationE();
+        console.log(themeE)
 
 
         const bannerB = await Banner.getHomeLocationB();
         const grid = await Categroy.getHomeLocationC();
         const activityD = await Activity.getHomeLocationD();
-        console.log(activityD)
+
         this.setData({
             themeA: themeA,
             themeE: themeE,

@@ -7,7 +7,7 @@ class Theme {
     static locationF = 't-3';
     static locationG = 't-4';
 
-    themes = []
+    themes = [];
 
 
     async getThemes() {
@@ -17,24 +17,24 @@ class Theme {
             url: `theme/by/names`,
             data: {
                 names
-            },
+            }
         })
     }
 
     async getHomeLocationA() {
-        return this.themes.find(t => t.names === Theme.locationA);
+        return this.themes.find(t => t.name === Theme.locationA);
     }
 
     async getHomeLocationE() {
-        return this.themes.find(t => t.names === Theme.locationE);
+        return this.themes.find(t => t.name === Theme.locationE);
     }
 
     async getHomeLocationF() {
-        return this.themes.find(t => t.names === Theme.locationF);
+        return this.themes.find(t => t.name === Theme.locationF);
     }
 
     async getHomeLocationG() {
-        return this.themes.find(t => t.names === Theme.locationG);
+        return this.themes.find(t => t.name === Theme.locationG);
     }
 
 }
