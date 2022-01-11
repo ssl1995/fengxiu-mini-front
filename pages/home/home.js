@@ -9,6 +9,7 @@ Page({
         themeA: null,
         themeE: null,
         bannerB: null,
+        themeESpu: null,
         grid: [],
         activityD: null,
     },
@@ -30,19 +31,25 @@ Page({
         await theme.getThemes();
 
         const themeA = await theme.getHomeLocationA();
-        console.log(themeA)
-
         const themeE = await theme.getHomeLocationE();
-        console.log(themeE)
 
-
+        let themeESpu = []
+        // 使用online属性进行判断
+        if (themeE.online) {
+            const data = await Theme.getHomeLocationESpu();
+            if (data) {
+                // 截取前8个用于展示
+                themeESpu = data.spu_list.slice(0, 8);
+            }
+        }
         const bannerB = await Banner.getHomeLocationB();
         const grid = await Categroy.getHomeLocationC();
         const activityD = await Activity.getHomeLocationD();
 
         this.setData({
-            themeA: themeA,
-            themeE: themeE,
+            themeA,
+            themeE,
+            themeESpu,
             bannerB,
             grid,
             activityD

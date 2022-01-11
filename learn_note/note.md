@@ -15,3 +15,11 @@
 Sku、Spu的概念
 
 Spu：商品 Standard Product Unit Sku：单品 Stock keeping Unit
+
+## 第5次作业
+
+探讨小程序分页加载的问题
+
+正在加载 加载完成 没有更多数据
+
+防止重复加载

@@ -1,0 +1,21 @@
+<view class="container">
+    <!--每周上新-->
+    <image class="title" src="{{theme.title_img}}"></image>
+    <!-- 滚动条 -->
+    <scroll-view>
+        <block wx:for="{{spuList}}">
+            <view>
+                <!--图片-->
+                <image src="{{item.img}}"></image>
+                <l-price
+                        autofix
+                        l-value-class="price-value"
+                        l-unit-class="price-unit"
+                        value="{{item.price}}"
+                ></l-price>
+                <!--商品名字-->
+                <text>{{item.title}}</text>
+            </view>
+        </block>
+    </scroll-view>
+</view>

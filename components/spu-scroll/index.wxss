@@ -1,0 +1,15 @@
+.title {
+    width: 692rpx;
+    height: 90rpx;
+}
+
+.price-unit {
+    /*!important：提高外部样式类的权重，让其生效*/
+    font-size: 28rpx !important;
+    color: #157658 !important;
+}
+
+.price-value {
+    font-size: 32rpx !important;
+    color: #157658 !important;
+}
