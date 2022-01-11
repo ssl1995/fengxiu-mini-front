@@ -2,11 +2,13 @@
     <!--每周上新-->
     <image class="title" src="{{theme.title_img}}"></image>
     <!-- 滚动条 -->
-    <scroll-view>
+    <scroll-view
+            scroll-x
+            enable-flex class="scroll-view">
         <block wx:for="{{spuList}}">
-            <view>
+            <view class="spu-container">
                 <!--图片-->
-                <image src="{{item.img}}"></image>
+                <image class="spu-img" src="{{item.img}}"></image>
                 <l-price
                         autofix
                         l-value-class="price-value"
