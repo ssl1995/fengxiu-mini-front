@@ -21,15 +21,15 @@ class Theme {
         })
     }
 
-    async getHomeLocationA() {
+    getHomeLocationA() {
         return this.themes.find(t => t.name === Theme.locationA);
     }
 
-    async getHomeLocationE() {
+    getHomeLocationE() {
         return this.themes.find(t => t.name === Theme.locationE);
     }
 
-    async getHomeLocationF() {
+    getHomeLocationF() {
         return this.themes.find(t => t.name === Theme.locationF);
     }
 

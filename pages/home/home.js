@@ -8,10 +8,12 @@ Page({
     data: {
         themeA: null,
         themeE: null,
+        themeF: null,
         bannerB: null,
         themeESpu: null,
         grid: [],
         activityD: null,
+        bannerG: null,
     },
 
     /**
@@ -30,8 +32,8 @@ Page({
         const theme = new Theme();
         await theme.getThemes();
 
-        const themeA = await theme.getHomeLocationA();
-        const themeE = await theme.getHomeLocationE();
+        const themeA = theme.getHomeLocationA();
+        const themeE = theme.getHomeLocationE();
 
         let themeESpu = []
         // 使用online属性进行判断
@@ -42,17 +44,23 @@ Page({
                 themeESpu = data.spu_list.slice(0, 8);
             }
         }
+        const themeF = theme.getHomeLocationF();
+
         const bannerB = await Banner.getHomeLocationB();
         const grid = await Categroy.getHomeLocationC();
         const activityD = await Activity.getHomeLocationD();
 
+        const bannerG = await Banner.getHomeLocationG();
+
         this.setData({
             themeA,
-            themeE,
-            themeESpu,
             bannerB,
             grid,
-            activityD
+            activityD,
+            themeE,
+            themeESpu,
+            themeF,
+            bannerG
         })
     },
 
