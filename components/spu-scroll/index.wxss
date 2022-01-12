@@ -11,12 +11,12 @@
 
 .price-unit {
     /*!important：提高外部样式类的权重，让其生效*/
-    font-size: 28rpx !important;
+    font-size: 24rpx !important;
     color: #157658 !important;
 }
 
 .price-value {
-    font-size: 32rpx !important;
+    font-size: 26rpx !important;
     color: #157658 !important;
 }
 
@@ -41,4 +41,16 @@
 .spu-img {
     width: 160rpx;
     height: 160rpx;
+}
+
+.spu-text {
+    font-size: 20rpx;
+    color: #666666;
+    margin-top: 20rpx;
+
+    /*可以使用css来让文本居中不换行*/
+    /*width: 150rpx;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    /*white-space: nowrap;*/
 }

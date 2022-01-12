@@ -1,3 +1,5 @@
+<wxs src="../../miniprogram_npm/lin-ui/filter/string.wxs" module="s"></wxs>
+
 <view class="container">
     <!--每周上新-->
     <image class="title" src="{{theme.title_img}}"></image>
@@ -8,6 +10,8 @@
                 <view class="spu-container">
                     <!--图片-->
                     <image class="spu-img" src="{{item.img}}"></image>
+                    <!--商品名字 使用wxs调用substring函数-->
+                    <text class="spu-text">{{item.title.length >= 8 ? s.substring(item.title, 0, 7) + '...' : item.title}} </text>
                     <!--价格图标-->
                     <l-price
                             autofix
@@ -15,8 +19,6 @@
                             l-unit-class="price-unit"
                             value="{{item.price}}"
                     ></l-price>
-                    <!--商品名字-->
-                    <text>{{item.title}}</text>
                 </view>
             </block>
         </view>
