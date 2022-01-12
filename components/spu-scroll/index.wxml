@@ -1,6 +1,6 @@
 <wxs src="../../miniprogram_npm/lin-ui/filter/string.wxs" module="s"></wxs>
 
-<view class="container">
+<view class="container l-class">
     <!--每周上新-->
     <image class="title" src="{{theme.title_img}}"></image>
     <!-- 滚动条 -->

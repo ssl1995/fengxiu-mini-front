@@ -1,16 +1,14 @@
 // components/spu-scroll/index.js
 Component({
-    /**
-     * 组件的属性列表
-     */
+    /*自定义设置外部样式类*/
+    externalClasses: ['l-class'],
+
     properties: {
         theme: Object, /*小程序驼峰组件，调用时spu-list*/
         spuList: Array
     },
 
-    /**
-     * 组件的初始数据
-     */
+
     data: {},
 
     /**
