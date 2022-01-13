@@ -5,13 +5,13 @@ class Theme {
     static locationA = 't-1';
     static locationE = 't-2';
     static locationF = 't-3';
-    static locationG = 't-4';
+    static locationH = 't-4';
 
     themes = [];
 
 
     async getThemes() {
-        const names = `${Theme.locationA},${Theme.locationE},${Theme.locationF},${Theme.locationG}`
+        const names = `${Theme.locationA},${Theme.locationE},${Theme.locationF},${Theme.locationH}`
         // await是一定会返回一个promise
         this.themes = await Http.request({
             url: `theme/by/names`,
@@ -33,8 +33,8 @@ class Theme {
         return this.themes.find(t => t.name === Theme.locationF);
     }
 
-    async getHomeLocationG() {
-        return this.themes.find(t => t.name === Theme.locationG);
+    getHomeLocationH() {
+        return this.themes.find(t => t.name === Theme.locationH);
     }
 
     static getHomeLocationESpu() {
