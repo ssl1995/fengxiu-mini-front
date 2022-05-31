@@ -5,6 +5,8 @@ import {Activity} from "../../model/activity";
 
 Page({
 
+    // xxx.js里数学调用的类或者函数
+
     data: {
         themeA: null,
         themeE: null,
@@ -18,14 +20,20 @@ Page({
     },
 
     /**
+     * onLoad:小程序默认加载数据的方法
      * 生命周期函数--监听页面加载
      * 由于Js没有类型的约束，所以页面js不要做业务逻辑，而是做数据绑定
      * 页面的js类似controller
      */
     async onLoad(options) {
+        // 初始化数据交给initAllData方法
         await this.initAllData();
     },
 
+    /**
+     * 初始化数据
+     * @returns {Promise<void>}
+     */
     async initAllData() {
         // 获取全部主题数据,
         // 为了全部Page只请求一次Themes

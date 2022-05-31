@@ -1,4 +1,6 @@
 <view>
+    <!-- xxx.wxml书写页面    -->
+
     <!--轮播图-->
     <image class="top-theme" src="{{themeA.entrance_img}}"></image>
     <!--六宫格-->

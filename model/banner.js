@@ -1,5 +1,8 @@
 const {Http} = require("../utils/http");
 
+/**
+ * 轮播图Banner
+ */
 class Banner {
     static locationB = 'b-1';
     static locationG = 'b-2';
