@@ -9,7 +9,10 @@ class Theme {
 
     themes = [];
 
-
+    /**
+     * 通用的
+     * @returns {Promise<void>}
+     */
     async getThemes() {
         const names = `${Theme.locationA},${Theme.locationE},${Theme.locationF},${Theme.locationH}`
         // await是一定会返回一个promise
@@ -49,6 +52,9 @@ class Theme {
 
 }
 
+/**
+ * js需要导出
+ */
 export {
     Theme
 }
