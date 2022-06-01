@@ -1,16 +1,22 @@
 <view>
     <!-- xxx.wxml书写页面    -->
 
-    <!--轮播图-->
+    <!--主题图：Sale图片-->
     <image class="top-theme" src="{{themeA.entrance_img}}"></image>
-    <!--六宫格-->
-    <!--调用微信小程序swiper组件-->
+
+    <!--banner图:想到小程序的swiper组件
+            indicator-dots 鼠标灰点
+            indicator-active-color="#157658" 下面的绿色小点
+            autoplay 自动滚动
+            circular 循环展示
+    -->
     <swiper class="swiper"
-            indicator-dots
+            indicator-dots 
             indicator-active-color="#157658"
             autoplay
             circular
-    >
+            >>
+        <!-- wx:for遍历 -->
         <block wx:for="{{bannerB.items}}">
             <swiper-item>
                 <image class="swiper" src="{{item.img}}"></image>
