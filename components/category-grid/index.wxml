@@ -1,7 +1,10 @@
 <view class="container">
-    <!--使用自定义组件：可以在app.json里全局引用-->
+    <!-- 使用自定义组件：可以在app.json里全局引用-->
+
+    <!-- 自定义组件样式，不能使用clase，必须使用l-class -->
     <l-grid l-class="inner-container">
         <block wx:for="{{grid}}">
+            <!-- wx:for里获取item的index  -->
             <l-grid-item key="{{index}}" slot="{{index}}">
                 <view class="grid-item">
                     <image class="img" src="{{item.img}}"></image>

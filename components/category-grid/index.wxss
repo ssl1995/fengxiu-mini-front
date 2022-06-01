@@ -1,13 +1,15 @@
+/* 六宫格最外层 */
 .container {
     height: 320rpx;
     width: 100%;
+    /* 弹性布局 */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     background-color: #ffffff; /*六宫格设置背景色为白色*/
 }
-
+/* 虚线层 */
 .inner-container {
     height: 300rpx;
     width: 730rpx;
@@ -15,6 +17,8 @@
 }
 
 .grid-item {
+    /* 高可以不设置 */
+    /* 宽最好设置：保持触摸区域，lin-ui会根据外部的730rpx来自动计算，不要超过最大值即可 */
     width: 200rpx;
     display: flex;
     flex-direction: column;
