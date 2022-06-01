@@ -6,6 +6,7 @@ function formatMonthTitle(date) {
 }
 
 
+
 module.exports = {
     formatMonthTitle: formatMonthTitle
 };

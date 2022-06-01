@@ -1,8 +1,7 @@
 /* eslint-disable */
 function getMonthEndDay(year, month) {
-    return getDate(year, month - 1, 0).getDate();
+  return getDate(year, month - 1, 0).getDate();
 }
-
 function compareMonth(date1, date2) {
     date1 = getDate(date1);
     date2 = getDate(date2);

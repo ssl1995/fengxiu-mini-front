@@ -1,3 +1,4 @@
+
 <view class="container l-class">
     <view class="text l-text-class" wx:if="{{showInfo && textPosition==='left'}}"
           style="color:{{textColor?textColor:''}};margin-right:{{interval}}rpx">

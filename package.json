@@ -9,6 +9,6 @@
   "author": "songshenglin",
   "license": "ISC",
   "dependencies": {
-    "lin-ui": "^0.9.5"
+    "lin-ui": "~0.9.10"
   }
 }

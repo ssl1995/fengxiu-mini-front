@@ -12,7 +12,7 @@
             <block wx:if="{{!dot && !icon}}">
                 <view wx:if="{{currentStatus.setStatus(activeIndex,index,status)==='error' || currentStatus.setStatus(activeIndex,index,status)==='finish'}}"
                       class="iconfont icon-{{currentStatus.setStatus(activeIndex,index,status)}}"></view>
-                <block wx:else>{{index+1}}</block>
+                <block wx:else>{{index + 1}}</block>
             </block>
         </view>
     </view>
@@ -32,45 +32,45 @@
 </view>
 
 <wxs module="currentStatus">
-    var setStatus = function(activeIndex,index,status){
-    if(activeIndex===index){
-    return status || 'process'
-    } else if(activeIndex>index){
-    return 'finish'
-    }else{
-    return 'wait'
-    }
-    }
-
-    var statusStyle = function(activeIndex,index,color,status){
-    if(activeIndex===index){
-    return status==='error'?'':('background-color:' + color)
-    } else if(activeIndex>index){
-    return ('border-color:' + color + ';color:' + color)
-    }else{
-    return ''
-    }
+    var setStatus = function (activeIndex, index, status) {
+        if (activeIndex === index) {
+            return status || 'process'
+        } else if (activeIndex > index) {
+            return 'finish'
+        } else {
+            return 'wait'
+        }
     }
 
-    var dotStyle = function(activeIndex,index,color){
-    if(activeIndex>=index){
-    return ('background-color:' + color)
-    } else{
-    return ''
-    }
+    var statusStyle = function (activeIndex, index, color, status) {
+        if (activeIndex === index) {
+            return status === 'error' ? '' : ('background-color:' + color)
+        } else if (activeIndex > index) {
+            return ('border-color:' + color + ';color:' + color)
+        } else {
+            return ''
+        }
     }
 
-    var isReverse = function(reverse,activeIndex,index) {
-    if(reverse){
-    return (activeIndex>=index)
+    var dotStyle = function (activeIndex, index, color) {
+        if (activeIndex >= index) {
+            return ('background-color:' + color)
+        } else {
+            return ''
+        }
     }
-    return (activeIndex>index)
+
+    var isReverse = function (reverse, activeIndex, index) {
+        if (reverse) {
+            return (activeIndex >= index)
+        }
+        return (activeIndex > index)
     }
 
     module.exports = {
-    setStatus:setStatus,
-    statusStyle:statusStyle,
-    dotStyle:dotStyle,
-    isReverse:isReverse
+        setStatus: setStatus,
+        statusStyle: statusStyle,
+        dotStyle: dotStyle,
+        isReverse: isReverse
     }
 </wxs>

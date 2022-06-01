@@ -1,4 +1,5 @@
 <view class="container">
+    <!--使用自定义组件：可以在app.json里全局引用-->
     <l-grid l-class="inner-container">
         <block wx:for="{{grid}}">
             <l-grid-item key="{{index}}" slot="{{index}}">

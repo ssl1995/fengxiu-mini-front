@@ -6,5 +6,6 @@
 
     <text class="l-value-class"
           style="color: {{valueColor?valueColor:color}}; font-size: {{valueSize?valueSize:size}}rpx; font-weight: {{valueBold?valueBold:bold}}">{{priceInteger}}<text
-            class="l-dot-class">{{priceDecimal?'.':''}}</text><text class="l-decimal-class">{{priceDecimal?priceDecimal:''}}</text></text>
+            class="l-dot-class">{{priceDecimal ? '.' : ''}}</text><text
+            class="l-decimal-class">{{priceDecimal ? priceDecimal : ''}}</text></text>
 </view>

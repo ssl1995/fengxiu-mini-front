@@ -7,7 +7,6 @@ function _isString(targetString, funName) {
     }
     return true;
 }
-
 /**
  * toString 返回指定对象的字符串形式
  * @param {String} targetString 目标字符串

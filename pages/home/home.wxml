@@ -11,11 +11,11 @@
             circular 循环展示
     -->
     <swiper class="swiper"
-            indicator-dots 
+            indicator-dots
             indicator-active-color="#157658"
             autoplay
             circular
-            >>
+    >>
         <!-- wx:for遍历 -->
         <block wx:for="{{bannerB.items}}">
             <swiper-item>
@@ -24,7 +24,12 @@
         </block>
     </swiper>
 
+    <!--六宫格：思考怎么自定义组件?
+        s-category-grid：自定义组件，在home.wxml
+        grid属性，在/components/category-grid/index.js里
+    -->
     <s-category-grid grid="{{grid}}"></s-category-grid>
+
     <!--优惠券-->
     <image class="activity" src="{{activityD.entrance_img}}"></image>
     <!--自定义组件：每周上新-->
