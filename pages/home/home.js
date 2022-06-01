@@ -44,6 +44,8 @@ Page({
         const themeA = theme.getHomeLocationA();
         const themeE = theme.getHomeLocationE();
 
+        // git
+
         let themeESpu = []
         // 使用online属性进行判断
         if (themeE.online) {
