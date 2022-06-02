@@ -10,20 +10,23 @@ class Theme {
     themes = [];
 
     /**
-     * 通用的
+     * getThemes获取主题
      * @returns {Promise<void>}
      */
     async getThemes() {
+        // 一次请求所有的names，减少http请求，因为后端接口提供了
         const names = `${Theme.locationA},${Theme.locationE},${Theme.locationF},${Theme.locationH}`
         // await是一定会返回一个promise
         this.themes = await Http.request({
             url: `theme/by/names`,
             data: {
-                names
+               names
             }
         })
     }
 
+    // 函数式编程
+    
     getHomeLocationA() {
         return this.themes.find(t => t.name === Theme.locationA);
     }

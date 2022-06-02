@@ -1,3 +1,4 @@
 page {
-    background-color: #f5f5f5; /*全局page背景色为灰色*/
+    /*全局page背景色为灰色*/
+    background-color: #f5f5f5;
 }
