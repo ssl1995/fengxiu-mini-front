@@ -44,14 +44,13 @@ Page({
         const themeA = theme.getHomeLocationA();
         const themeE = theme.getHomeLocationE();
 
-        // git
 
         let themeESpu = []
-        // 使用online属性进行判断
+        // online = ture,表示上架
         if (themeE.online) {
             const data = await Theme.getHomeLocationESpu();
             if (data) {
-                // 截取前8个用于展示
+                // slice：截取前8个用于展示
                 themeESpu = data.spu_list.slice(0, 8);
             }
         }

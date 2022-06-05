@@ -4,7 +4,9 @@ Component({
     externalClasses: ['l-class'],
 
     properties: {
-        theme: Object, /*小程序驼峰组件，调用时spu-list*/
+        theme: Object,
+
+        /*小程序驼峰组件，调用时spu-list*/
         spuList: Array
     },
 
