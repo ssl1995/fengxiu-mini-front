@@ -7,6 +7,7 @@ class Theme {
     static locationF = 't-3';
     static locationH = 't-4';
 
+    // 保存数据:使用类的对象
     themes = [];
 
     /**

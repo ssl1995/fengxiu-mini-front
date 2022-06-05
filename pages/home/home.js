@@ -1,7 +1,7 @@
-import {Theme} from "../../model/theme";
-import {Banner} from "../../model/banner";
-import {Categroy} from "../../model/categroy";
-import {Activity} from "../../model/activity";
+import { Theme } from "../../model/theme";
+import { Banner } from "../../model/banner";
+import { Categroy } from "../../model/categroy";
+import { Activity } from "../../model/activity";
 
 Page({
 
@@ -37,7 +37,7 @@ Page({
     async initAllData() {
         // 获取全部主题数据,
         // 为了全部Page只请求一次Themes
-        // 保存数据：page的data里、缓存、保存在app全局,最好的办法是使用类的对象保存状态和数据
+        // 保存数据：1.page的data里、2.缓存、3.保存在app.js全局里 4.使用类的对象，保存数据
         const theme = new Theme();
         await theme.getThemes();
 
