@@ -1,3 +1,4 @@
+<!-- 引入lin-ui的string.wxs -->
 <wxs src="../../miniprogram_npm/lin-ui/filter/string.wxs" module="s"></wxs>
 
 <view class="container l-class">
@@ -11,7 +12,10 @@
                     <!--图片-->
                     <image class="spu-img" src="{{item.img}}"></image>
                     <!--商品名字 使用wxs调用substring函数-->
-                    <text class="spu-text">{{item.title.length >= 8 ? s.substring(item.title, 0, 7) + '...' : item.title}} </text>
+                    <text class="spu-text">
+                        <!-- 商品文字截断:超过8个字符长度，就使用lin-ui的wxs的string.wxs函数-->
+                        {{item.title.length >= 8 ? s.substring(item.title, 0, 7) + '...' : item.title}}
+                    </text>
                     <!--lin-ui：价格组件-->
                     <l-price
                             l-unit-class="price-unit"
