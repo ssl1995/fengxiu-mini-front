@@ -32,6 +32,7 @@
 
     <!--优惠券-->
     <image class="activity" src="{{activityD.entrance_img}}"></image>
+    
     <!--自定义组件：每周上新-->
     <s-spu-scroll
             l-class="spu-scroll"
@@ -39,12 +40,12 @@
             spu-list="{{themeESpu}}"
             wx:if="{{themeE.online}}">
     </s-spu-scroll>
+    
     <!--风袖甑选-->
     <image src="{{themeF.entrance_img}}" class="quality"></image>
-    <!--热卖榜单-->
-    <s-hot-list banner="{{bannerG}}">
-
-    </s-hot-list>
+    
+    <!--热卖榜单:封装成一个组件，形成theme+banner的组件-->
+    <s-hot-list banner="{{bannerG}}"></s-hot-list>
 
     <image src="{{themeH.entrance_img}}" class="fashion"></image>
 
