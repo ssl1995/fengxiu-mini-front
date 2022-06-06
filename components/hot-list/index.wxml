@@ -1,7 +1,7 @@
 <view class="container">
     <image class="title" src="{{banner.img}}"></image>
     <view class="inner-container">
-        <!--view提供点击态-->
+        <!--view：小程序自带的点击态-->
         <view hover-class="rect-hover" hover-stay-time="300">
             <image class="left" src="{{left.img}}"></image>
         </view>
