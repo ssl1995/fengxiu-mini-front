@@ -1,5 +1,5 @@
-
 .container {
+    /* 设置了width，会加上padding，所以再设置box-sizing */
     box-sizing: border-box;
     width: 100%;
     padding: 42rpx 0rpx 34rpx 28rpx;
