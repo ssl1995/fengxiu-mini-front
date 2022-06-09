@@ -2,6 +2,7 @@ import { Theme } from "../../model/theme";
 import { Banner } from "../../model/banner";
 import { Categroy } from "../../model/categroy";
 import { Activity } from "../../model/activity";
+import { SpuPaging } from "../../model/spu-paging";
 
 Page({
 
@@ -29,6 +30,15 @@ Page({
         // 初始化数据交给initAllData方法
         await this.initAllData();
     },
+
+    async initBottomSpuList() {
+        const paging = await SpuPaging.getLstestPaging();;
+        const data = paging.getMoreData();
+        if (!data) {
+            return;
+        }
+    }
+
 
     /**
      * 初始化数据
