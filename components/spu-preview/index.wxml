@@ -1,7 +1,7 @@
 <wxs src="../../wxs/price.wxs" module="p"></wxs>
 
 
-<view class="container">
+<view data-pid="{{data.id}}" bind:tap="onItemTap" class="container">
     <!-- 动态图片高宽 -->
     <image bind:load="onImgLoad" style="width:{{w}}rpx;height:{{h}}rpx;" class="img" src="{{data.img}}"></image>
     <view class="content-container">

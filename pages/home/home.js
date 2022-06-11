@@ -1,8 +1,8 @@
-import {Theme} from "../../model/theme";
-import {Banner} from "../../model/banner";
-import {Categroy} from "../../model/categroy";
-import {Activity} from "../../model/activity";
-import {SpuPaging} from "../../model/spu-paging";
+import {Theme} from "../../models/theme";
+import {Banner} from "../../models/banner";
+import {Categroy} from "../../models/categroy";
+import {Activity} from "../../models/activity";
+import {SpuPaging} from "../../models/spu-paging";
 
 Page({
 

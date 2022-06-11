@@ -39,8 +39,14 @@ Component({
                 w: 340,
                 h: height * 340 / width
             }
+        },
+        onItemTap(event) {
+            // 拿到商品的pid
+            const pid = event.currentTarget.dataset.pid;
+            wx.navigateTo({
+                url: `/pages/detail/detail?pid=${pid}`
+            })
         }
-
 
     }
 })
