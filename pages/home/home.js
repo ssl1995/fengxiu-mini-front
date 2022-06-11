@@ -27,8 +27,10 @@ Page({
      * 页面的js类似controller
      */
     async onLoad(options) {
-        // 初始化数据交给initAllData方法
-        await this.initAllData();
+
+        this.initAllData();
+
+        this.initBottomSpuList();
     },
 
     async initBottomSpuList() {

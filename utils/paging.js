@@ -1,11 +1,13 @@
+import { Http } from "./http"
+
 class Paging {
     start;
     count;
     req;
     locker = false;
     url;
-    moreData;
-    accumulator;
+    moreData = true;
+    accumulator = [];
 
     constructor(req, count = 10, start = 0) {
         this.start = start;
@@ -19,11 +21,11 @@ class Paging {
             return;
         }
 
-        if (this._getLocker()) {
+        if (!this._getLocker()) {
             return;
         }
 
-        const data = this._accumulator();
+        const data = await this._actualGetDate();
 
         this._releaseLocker();
 
@@ -32,8 +34,8 @@ class Paging {
     }
 
     async _actualGetDate() {
-        const req = this._getCurrentReq();
-        let paging = await Http.reqest(req);
+        const req = this._getCurrentReq()
+        let paging = await Http.request(req)
 
         if (!paging) {
             return null;
@@ -48,67 +50,65 @@ class Paging {
             }
         }
 
-        this.moreData = this._moreData(paging.total_page, paging.page);
+        this.moreData = Paging._moreData(paging.total_page, paging.page)
 
         if (this.moreData) {
-            this.start += this.count;
+            this.start += this.count
         }
 
         // 返回结果需要统一数据结构
         // js也可以考虑使用class封装成对象
 
-        this._accumulator(paging.items);
+        this._accumulate(paging.items)
 
         return {
-            empty: true,
+            empty: false,
             items: paging.items,
             moreData: this.moreData,
             accumulator: this.accumulator
         }
     }
 
-    _accumulator(items) {
+    _accumulate(items) {
         // 数组拼接
-        this.accumulator = this.accumulator.concat(items);
+        this.accumulator = this.accumulator.concat(items)
     }
 
     _moreData(totalPage, pageNum) {
         // pageNum从0开始
-        return pageNum < totalPage - 1;
+        return pageNum < totalPage - 1
     }
 
 
 
     _getCurrentReq() {
-        let url = this.url;
+        let url = this.url
         // 分页参数
-        const params = `start=${this.start} &count=${this.count}`;
+        const params = `start=${this.start}&count=${this.count}`
 
-        if (url.indexOf("?") !== -1) {
-            url += '&' + params;
+        if (url.includes('?')) {
+            url += '&' + params
         } else {
-            url += '?' + params;
+            url += '?' + params
         }
 
-        this.req.url = this.url;
-        return this.req;
+        this.req.url = url
+        return this.req
     }
 
     _getLocker() {
         if (this.locker) {
-            return false;
+            return false
         }
 
-        this.locker = true;
-        return true;
+        this.locker = true
+        return true
     }
 
     _releaseLocker() {
-        this.locker = false;
+        this.locker = false
     }
 }
-
-
 
 export {
     Paging
