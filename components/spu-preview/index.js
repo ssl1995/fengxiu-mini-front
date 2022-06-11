@@ -27,5 +27,20 @@ Component({
     /**
      * 组件的方法列表
      */
-    methods: {}
+    methods: {
+        onImgLoad(event) {
+            // 监听获得图片真实的高宽
+            const {width, height} = event.detail;
+            /*
+                width height
+                340rpx ?
+             */
+            return {
+                w: 340,
+                h: height * 340 / width
+            }
+        }
+
+
+    }
 })
