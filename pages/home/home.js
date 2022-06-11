@@ -17,7 +17,8 @@ Page({
         grid: [],
         activityD: null,
         bannerG: null,
-        themeH: null
+        themeH: null,
+        spuPaging: null,
     },
 
     /**
@@ -28,13 +29,15 @@ Page({
      */
     async onLoad(options) {
 
-        this.initAllData();
+        await this.initAllData();
 
-        this.initBottomSpuList();
+        await this.initBottomSpuList();
     },
 
     async initBottomSpuList() {
         const paging = SpuPaging.getLstestPaging();
+        this.data.spuPaging = paging;
+
         const data = await paging.getMoreData();
         if (!data) {
             return;
@@ -91,13 +94,19 @@ Page({
         })
     },
 
-
-    onPullDownRefresh: function () {
-
+    /**
+     * 屏幕最低端向下拖动滑动的事件
+     */
+    onReachBottom: async function () {
+        const data = await this.data.spuPaging.getMoreData();
+        if (!data) {
+            return
+        }
+        wx.lin.renderWaterFlow(data.items)
     },
 
 
-    onReachBottom: function () {
+    onPullDownRefresh: function () {
 
     },
 
