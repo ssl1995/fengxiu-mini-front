@@ -1,60 +1,62 @@
-<view>
-    <!-- xxx.wxml书写页面    -->
+<l-loadmore show type="{{loadingType}}" loadingText="正在加载中~" endText="已经到底了">
+    <view slot="content" class="container">
+        <!-- xxx.wxml书写页面    -->
 
-    <!--主题图：Sale图片-->
-    <image class="top-theme" src="{{themeA.entrance_img}}"></image>
+        <!--主题图：Sale图片-->
+        <image class="top-theme" src="{{themeA.entrance_img}}"></image>
 
-    <!--banner图:想到小程序的swiper组件
-            indicator-dots 鼠标灰点
-            indicator-active-color="#157658" 下面的绿色小点
-            autoplay 自动滚动
-            circular 循环展示
-    -->
-    <swiper class="swiper"
-            indicator-dots
-            indicator-active-color="#157658"
-            autoplay
-            circular
-    >>
-        <!-- wx:for遍历 -->
-        <block wx:for="{{bannerB.items}}">
-            <swiper-item>
-                <image class="swiper" src="{{item.img}}"></image>
-            </swiper-item>
-        </block>
-    </swiper>
+        <!--banner图:想到小程序的swiper组件
+                indicator-dots 鼠标灰点
+                indicator-active-color="#157658" 下面的绿色小点
+                autoplay 自动滚动
+                circular 循环展示
+        -->
+        <swiper class="swiper"
+                indicator-dots
+                indicator-active-color="#157658"
+                autoplay
+                circular
+        >>
+            <!-- wx:for遍历 -->
+            <block wx:for="{{bannerB.items}}" wx:key="index">
+                <swiper-item>
+                    <image class="swiper" src="{{item.img}}"></image>
+                </swiper-item>
+            </block>
+        </swiper>
 
-    <!--六宫格：思考怎么自定义组件?
-        s-category-grid：自定义组件，在home.wxml
-        grid属性，在/components/category-grid/index.js里
-    -->
-    <s-category-grid grid="{{grid}}"></s-category-grid>
+        <!--六宫格：思考怎么自定义组件?
+            s-category-grid：自定义组件，在home.wxml
+            grid属性，在/components/category-grid/index.js里
+        -->
+        <s-category-grid grid="{{grid}}"></s-category-grid>
 
-    <!--优惠券-->
-    <image class="activity" src="{{activityD.entrance_img}}"></image>
-    
-    <!--自定义组件：每周上新-->
-    <s-spu-scroll
-            l-class="spu-scroll"
-            theme="{{themeE}}"
-            spu-list="{{themeESpu}}"
-            wx:if="{{themeE.online}}">
-    </s-spu-scroll>
-    
-    <!--风袖甑选-->
-    <image src="{{themeF.entrance_img}}" class="quality"></image>
-    
-    <!--热卖榜单:封装成一个组件，形成theme+banner的组件-->
-    <s-hot-list banner="{{bannerG}}"></s-hot-list>
+        <!--优惠券-->
+        <image class="activity" src="{{activityD.entrance_img}}"></image>
 
-    <image src="{{themeH.entrance_img}}" class="fashion"></image>
+        <!--自定义组件：每周上新-->
+        <s-spu-scroll
+                l-class="spu-scroll"
+                theme="{{themeE}}"
+                spu-list="{{themeESpu}}"
+                wx:if="{{themeE.online}}">
+        </s-spu-scroll>
 
-    <!-- 瀑布流 -->
-    <view class="spu-bottom">
-        <image class="title-spu-bottom" src="/imgs/home/title@interest.png"></image>
-        <!-- 自定义组件：引入自定义组件generic-->
-        <l-water-flow generic:l-water-flow-item="s-spu-preview"></l-water-flow>
+        <!--风袖甑选-->
+        <image src="{{themeF.entrance_img}}" class="quality"></image>
+
+        <!--热卖榜单:封装成一个组件，形成theme+banner的组件-->
+        <s-hot-list banner="{{bannerG}}"></s-hot-list>
+
+        <image src="{{themeH.entrance_img}}" class="fashion"></image>
+
+        <!-- 瀑布流 -->
+        <view class="spu-bottom">
+            <image class="title-spu-bottom" src="/imgs/home/title@interest.png"></image>
+            <!-- 自定义组件：引入自定义组件generic-->
+            <l-water-flow generic:l-water-flow-item="s-spu-preview"></l-water-flow>
+
+        </view>
 
     </view>
-
-</view>
+</l-loadmore>

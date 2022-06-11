@@ -7,7 +7,7 @@
     <!-- 小程序原生组件:scroll-view 滚动条 -->
     <scroll-view scroll-x class="scroll-view">
         <view class="inner">
-            <block wx:for="{{spuList}}">
+            <block wx:for="{{spuList}}" wx:key="index">
                 <view class="spu-container">
                     <!--图片-->
                     <image class="spu-img" src="{{item.img}}"></image>
