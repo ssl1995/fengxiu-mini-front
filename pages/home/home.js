@@ -1,8 +1,8 @@
-import { Theme } from "../../model/theme";
-import { Banner } from "../../model/banner";
-import { Categroy } from "../../model/categroy";
-import { Activity } from "../../model/activity";
-import { SpuPaging } from "../../model/spu-paging";
+import {Theme} from "../../model/theme";
+import {Banner} from "../../model/banner";
+import {Categroy} from "../../model/categroy";
+import {Activity} from "../../model/activity";
+import {SpuPaging} from "../../model/spu-paging";
 
 Page({
 
@@ -34,11 +34,13 @@ Page({
     },
 
     async initBottomSpuList() {
-        const paging = await SpuPaging.getLstestPaging();;
-        const data = paging.getMoreData();
+        const paging = SpuPaging.getLstestPaging();
+        const data = await paging.getMoreData();
         if (!data) {
             return;
         }
+        // 累加
+        wx.lin.renderWaterFlow(data.items)
     },
 
 

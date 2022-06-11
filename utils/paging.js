@@ -1,4 +1,4 @@
-import { Http } from "./http"
+import {Http} from "./http"
 
 class Paging {
     start;
@@ -50,7 +50,7 @@ class Paging {
             }
         }
 
-        this.moreData = Paging._moreData(paging.total_page, paging.page)
+        this.moreData = this._moreData(paging.total_page, paging.page)
 
         if (this.moreData) {
             this.start += this.count

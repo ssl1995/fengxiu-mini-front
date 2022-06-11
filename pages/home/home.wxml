@@ -53,7 +53,7 @@
     <view class="spu-bottom">
         <image class="title-spu-bottom" src="/imgs/home/title@interest.png"></image>
         <!-- 自定义组件：引入自定义组件generic-->
-        <l-water-flow generic:l-water-flow=""></l-water-flow>
+        <l-water-flow generic:l-water-flow-item="s-spu-preview"></l-water-flow>
 
     </view>
 
