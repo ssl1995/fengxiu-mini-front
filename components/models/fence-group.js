@@ -4,31 +4,15 @@ import { Fence } from "./fence";
 class FenceGroup {
     spu;
     skuList;
+    fences = [];
+
 
     constructor(spu) {
         this.spu = spu;
         this.skuList = spu.sku_list;
     }
 
-    /**
-     * 转置2：fences里塞数据
-     */
-    initFences1() {
-        const matrix = this._createMatrix(this.skuList);
-        const fences = []
-        let currentJ = -1
-        // 转置
-        matrix.forEach((ele, i, j) => {
-            if (currentJ !== j) {
-                currentJ = j;
-                fences[currentJ] = this._createFence()
-            }
 
-            fences[currentJ].pushValueTitles(ele.value)
-        })
-
-        console.log(fences)
-    }
 
     /**
      * 转置1：封装成matrix里的方法
@@ -46,7 +30,9 @@ class FenceGroup {
             fences.push(fence);
         })
 
-        console.log(fences)
+        this.fences = fences;
+
+        console.log(this.fences)
 
     }
 
@@ -63,6 +49,26 @@ class FenceGroup {
 
         return new Matrix(m);
     }
+
+    /**
+ * 转置2：fences里塞数据
+ */
+    // initFences1() {
+    //     const matrix = this._createMatrix(this.skuList);
+    //     const fences = []
+    //     let currentJ = -1
+    //     // 转置
+    //     matrix.forEach((ele, i, j) => {
+    //         if (currentJ !== j) {
+    //             currentJ = j;
+    //             fences[currentJ] = this._createFence()
+    //         }
+
+    //         fences[currentJ].pushValueTitles(ele.value)
+    //     })
+
+    //     console.log(fences)
+    // }
 
 
 }

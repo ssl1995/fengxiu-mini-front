@@ -1,5 +1,7 @@
 Component({
-    properties: {},
+    properties: {
+        fence: Object
+    },
     data: {},
     methods: {}
 });

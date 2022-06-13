@@ -13,7 +13,11 @@ Component({
             const fenceGroup = new FenceGroup(spu);
             // 选择使用自定义手动转置
             fenceGroup.initFences();
-            // fenceGroup.initFences1();
+
+
+
+
+            this.bindInitData(fenceGroup);
 
         }
 
@@ -21,5 +25,12 @@ Component({
 
 
     data: {},
-    methods: {}
+    methods: {
+        bindInitData(fenceGroup) {
+            console.log("bindInitData接受到的fenceGroup.fences:" + fenceGroup.fences)
+            this.setData({
+                fences: fenceGroup.fences
+            })
+        }
+    }
 });

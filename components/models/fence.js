@@ -9,8 +9,8 @@ class Fence {
 
     constructor(specs) {
         this.specs = specs;
-        this.title = specs.key;
-        this.id = specs.key_id
+        this.title = specs[0].key;
+        this.id = specs[0].key_id
     }
 
 
