@@ -1,0 +1,24 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "测试fence",
+          "pathName": "pages/detail/detail",
+          "query": "pid=10",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

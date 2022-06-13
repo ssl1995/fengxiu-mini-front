@@ -1,4 +1,4 @@
-// components/spu-preview/index.js
+// components/spu-preview/details.js
 Component({
     /**
      * 组件的属性列表
@@ -43,6 +43,7 @@ Component({
         onItemTap(event) {
             // 拿到商品的pid
             const pid = event.currentTarget.dataset.pid;
+            // 跳转到某个页面
             wx.navigateTo({
                 url: `/pages/detail/detail?pid=${pid}`
             })

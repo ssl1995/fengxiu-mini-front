@@ -1,4 +1,4 @@
-// components/spu-scroll/index.js
+// components/spu-scroll/details.js
 Component({
     /*自定义设置外部样式类*/
     externalClasses: ['l-class'],
