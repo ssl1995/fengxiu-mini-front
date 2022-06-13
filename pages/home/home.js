@@ -1,7 +1,8 @@
-import { Theme } from "../../model/theme";
-import { Banner } from "../../model/banner";
-import { Categroy } from "../../model/categroy";
-import { Activity } from "../../model/activity";
+import {Theme} from "../../models/theme";
+import {Banner} from "../../models/banner";
+import {Categroy} from "../../models/categroy";
+import {Activity} from "../../models/activity";
+import {SpuPaging} from "../../models/spu-paging";
 
 Page({
 
@@ -16,7 +17,9 @@ Page({
         grid: [],
         activityD: null,
         bannerG: null,
-        themeH: null
+        themeH: null,
+        spuPaging: null,
+        loadingType: 'loading'
     },
 
     /**
@@ -26,9 +29,24 @@ Page({
      * 页面的js类似controller
      */
     async onLoad(options) {
-        // 初始化数据交给initAllData方法
+
         await this.initAllData();
+
+        await this.initBottomSpuList();
     },
+
+    async initBottomSpuList() {
+        const paging = SpuPaging.getLstestPaging();
+        this.data.spuPaging = paging;
+
+        const data = await paging.getMoreData();
+        if (!data) {
+            return;
+        }
+        // 累加
+        wx.lin.renderWaterFlow(data.items)
+    },
+
 
     /**
      * 初始化数据
@@ -77,13 +95,26 @@ Page({
         })
     },
 
+    /**
+     * 屏幕最低端向下拖动滑动的事件
+     */
+    onReachBottom: async function () {
+        const data = await this.data.spuPaging.getMoreData();
+        if (!data) {
+            return
+        }
+        wx.lin.renderWaterFlow(data.items)
 
-    onPullDownRefresh: function () {
+        if (!data.moreData) {
+            this.setData({
+                loadingType: 'end'
+            })
+        }
 
     },
 
 
-    onReachBottom: function () {
+    onPullDownRefresh: function () {
 
     },
 

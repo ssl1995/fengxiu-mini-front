@@ -1,5 +1,5 @@
-import {config} from "../config/config";
-import {promisic} from "../miniprogram_npm/lin-ui/utils/util";
+import { config } from "../config/config";
+import { promisic } from "../miniprogram_npm/lin-ui/utils/util";
 
 class Http {
     // 常用的异步是callback,promise,async和await
@@ -11,7 +11,7 @@ class Http {
      * @param data 请求数据
      * @returns {Promise<*>} 返回值
      */
-    static async request({url, method = 'GET', data}) {
+    static async request({ url, method = 'GET', data }) {
         const res = await promisic(wx.request)({
             url: `${config.apiBaseUrl}${url}`,
             data,
