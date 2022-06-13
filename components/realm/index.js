@@ -27,7 +27,7 @@ Component({
     data: {},
     methods: {
         bindInitData(fenceGroup) {
-            console.log("bindInitData接受到的fenceGroup.fences:" + fenceGroup.fences)
+
             this.setData({
                 fences: fenceGroup.fences
             })
