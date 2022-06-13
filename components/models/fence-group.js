@@ -11,9 +11,9 @@ class FenceGroup {
     }
 
     /**
-     * 转置1：fences里塞数据
+     * 转置2：fences里塞数据
      */
-    initFences() {
+    initFences1() {
         const matrix = this._createMatrix(this.skuList);
         const fences = []
         let currentJ = -1
@@ -31,16 +31,16 @@ class FenceGroup {
     }
 
     /**
-     * 转置2：封装成matrix里的方法
+     * 转置1：封装成matrix里的方法
      */
-    initFences1() {
+    initFences() {
         const matrix = this._createMatrix(this.skuList);
 
         const fences = []
-        const At = matrix.transpose();
+        const AT = matrix.transpose();
 
 
-        At.forEach(r => {
+        AT.forEach(r => {
             const fence = new Fence(r);
             fence.init();
             fences.push(fence);
