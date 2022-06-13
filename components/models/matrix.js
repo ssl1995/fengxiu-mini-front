@@ -9,7 +9,7 @@ class Matrix {
         this.m = matrix;
     }
 
-    get RowNum() {
+    get rowNum() {
         return this.m.length;
     }
 
@@ -19,11 +19,28 @@ class Matrix {
 
     forEach(cb) {
         for (let j = 0; j < this.colNum; j++) {
-            for (let i = 0; i < this.RowNum; i++) {
+            for (let i = 0; i < this.rowNum; i++) {
                 const ele = this.m[i][j];
                 cb(ele, i, j);
             }
         }
+    }
+
+    /**
+     * 将二维数组转置
+     */
+    transpose() {
+        const destArr = [];
+
+        for (let j = 0; j < this.colNum; j++) {
+            destArr[j] = [];
+
+            for (let i = 0; i < this.rowNum; i++) {
+                destArr[j][i] = this.m[i][j];
+            }
+        }
+
+        return destArr;
     }
 
 

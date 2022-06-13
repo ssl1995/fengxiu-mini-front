@@ -1,5 +1,5 @@
-import {Matrix} from "./matrix";
-import {Fence} from "./fence";
+import { Matrix } from "./matrix";
+import { Fence } from "./fence";
 
 class FenceGroup {
     spu;
@@ -10,6 +10,9 @@ class FenceGroup {
         this.skuList = spu.sku_list;
     }
 
+    /**
+     * 转置1：fences里塞数据
+     */
     initFences() {
         const matrix = this._createMatrix(this.skuList);
         const fences = []
@@ -25,6 +28,26 @@ class FenceGroup {
         })
 
         console.log(fences)
+    }
+
+    /**
+     * 转置2：封装成matrix里的方法
+     */
+    initFences1() {
+        const matrix = this._createMatrix(this.skuList);
+
+        const fences = []
+        const At = matrix.transpose();
+
+
+        At.forEach(r => {
+            const fence = new Fence(r);
+            fence.init();
+            fences.push(fence);
+        })
+
+        console.log(fences)
+
     }
 
     _createFence() {

@@ -1,4 +1,4 @@
-import {FenceGroup} from "../models/fence-group";
+import { FenceGroup } from "../models/fence-group";
 
 Component({
     properties: {
@@ -12,7 +12,9 @@ Component({
             }
             const fenceGroup = new FenceGroup(spu);
 
-            fenceGroup.initFences();
+            // fenceGroup.initFences();
+            fenceGroup.initFences1();
+
         }
 
     },
