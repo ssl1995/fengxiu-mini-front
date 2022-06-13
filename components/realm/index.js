@@ -11,7 +11,7 @@ Component({
                 return;
             }
             const fenceGroup = new FenceGroup(spu);
-
+            // 选择使用自定义手动转置
             fenceGroup.initFences();
             // fenceGroup.initFences1();
 
