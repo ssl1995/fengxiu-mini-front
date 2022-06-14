@@ -12,8 +12,6 @@ class FenceGroup {
         this.skuList = spu.sku_list;
     }
 
-
-
     /**
      * 转置1：封装成matrix里的方法
      */
@@ -32,7 +30,7 @@ class FenceGroup {
 
         this.fences = fences;
 
-        console.log(this.fences)
+        // console.log(this.fences)
 
     }
 

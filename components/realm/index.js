@@ -1,4 +1,5 @@
 import { FenceGroup } from "../models/fence-group";
+import { Judger } from "../models/judger";
 
 Component({
     properties: {
@@ -14,10 +15,10 @@ Component({
             // 选择使用自定义手动转置
             fenceGroup.initFences();
 
-
-
-
+            // console.log(fenceGroup)
             this.bindInitData(fenceGroup);
+
+            const judger = new Judger(fenceGroup);
 
         }
 
