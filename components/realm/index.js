@@ -1,9 +1,9 @@
-import { FenceGroup } from "../models/fence-group";
-import { Judger } from "../models/judger";
+import {FenceGroup} from "../models/fence-group";
+import {Judger} from "../models/judger";
 
 Component({
     properties: {
-        spu: Object
+        spu: Object,
     },
 
     observers: {
@@ -18,14 +18,19 @@ Component({
             // console.log(fenceGroup)
             this.bindInitData(fenceGroup);
 
-            const judger = new Judger(fenceGroup);
+            const judge = new Judger(fenceGroup);
 
+            this.data.judge = judge;
         }
 
     },
 
 
-    data: {},
+    data: {
+        judge: Object
+    },
+
+
     methods: {
         bindInitData(fenceGroup) {
 
@@ -35,7 +40,15 @@ Component({
         },
 
         onCellTap(event) {
-            // console.log(event)
+            const cell = event.detail.cell
+            console.log(event.detail)
+
+            const judge = this.data.judge
+            judge.judge(cell)
+
+            this.setData({
+                fences: judge.fenceGroup.fences
+            })
         }
 
 
