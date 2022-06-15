@@ -41,10 +41,10 @@ Component({
 
         onCellTap(event) {
             const cell = event.detail.cell
-            console.log(event.detail)
-
+            const x = event.detail.x;
+            const y = event.detail.y;
             const judge = this.data.judge
-            judge.judge(cell)
+            judge.judge(cell, x, y)
 
             this.setData({
                 fences: judge.fenceGroup.fences
