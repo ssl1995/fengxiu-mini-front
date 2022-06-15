@@ -7,6 +7,11 @@ Component({
 
   },
   methods: {
+    onTap(event) {
 
+      this.triggerEvent("celltag", {
+
+      })
+    }
   },
 });
