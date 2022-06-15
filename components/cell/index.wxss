@@ -24,7 +24,7 @@
 
 .s-outer {
     border: 2rpx solid #157658;
-    color: #157658;
+    color: #ffffff;
 }
 
 .s-inner {

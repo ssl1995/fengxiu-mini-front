@@ -1,5 +1,5 @@
-<view class="container forbidder">
-    <view class="inner-container">
+<view bind:tag="onTag" class="container s-outer">
+    <view class="inner-container s-inner">
         <text>{{cell.title}}</text>
     </view>
 </view>
